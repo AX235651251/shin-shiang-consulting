@@ -37,6 +37,12 @@ body {
     font-weight: 400;
 }
 
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
 /* Typography Overhaul */
 h1,
 h2,
@@ -195,12 +201,19 @@ p {
     background-color: var(--bg-color);
 }
 
-.grid-2 {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 80px;
-    /* Larger gap */
-    align-items: center;
+display: grid;
+grid-template-columns: 0.8fr 1.2fr;
+/* Ratio: Image smaller, Text wider */
+gap: 60px;
+align-items: center;
+}
+
+/* Responsive Grid */
+@media (max-width: 992px) {
+    .grid-2 {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
 }
 
 .about-text .quote-box {
