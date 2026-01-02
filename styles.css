@@ -380,13 +380,15 @@ p {
     padding: 80px 50px;
     border-radius: 4px;
     position: relative;
+    margin-top: 50px;
+    /* Space outside the container */
 }
 
 .why-us-highlight h3 {
     color: var(--accent-color);
     font-size: 2rem;
-    margin-top: 50px;
-    /* Increased from 20px */
+    margin-top: 20px;
+    /* Reverted to 20px */
     display: flex;
     align-items: center;
     gap: 15px;
