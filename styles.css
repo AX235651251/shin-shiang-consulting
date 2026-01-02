@@ -121,8 +121,8 @@ p {
 }
 
 .nav-logo {
-    height: 50px;
-    /* Slight adjustment for better proportion */
+    height: 80px;
+    /* Increased size as requested */
 }
 
 .nav-menu {
