@@ -727,8 +727,10 @@ p {
     /* Adjust specific text/layout for mobile */
     .hero {
         text-align: center;
-        background-position: 75% center;
-        /* Slightly more center-right */
+        background-position: right center;
+        /* Force fully right aligned */
+        background-attachment: scroll;
+        /* Fix excessive 'zoom' caused by fixed bg on mobile */
         /* Switch to vertical gradient for mobile - darker overall for text pop */
         background-image: linear-gradient(to bottom,
                 rgba(15, 44, 62, 0.4) 0%,
