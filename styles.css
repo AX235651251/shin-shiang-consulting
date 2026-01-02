@@ -744,6 +744,21 @@ p {
     .hero .container {
         align-items: center;
         text-align: center;
+        padding: 0 20px;
+        /* Reduce padding to give more space for content */
+    }
+
+    .hero .btn-large {
+        width: 100%;
+        /* Full width button on mobile */
+        max-width: 320px;
+        /* But don't get too wide */
+        padding: 15px 20px;
+        /* Slightly less padding */
+        font-size: 1rem;
+        /* Smaller font to prevent breaking */
+        white-space: nowrap;
+        /* Force single line if possible */
     }
 
     .feature-list {
