@@ -108,9 +108,65 @@ p {
     border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .nav-logo {
-    height: 60px;
-    /* Slightly larger logo */
+    height: 50px;
+    /* Slight adjustment for better proportion */
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--primary-color);
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: var(--transition);
+    position: relative;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background-color: var(--accent-color);
+    transition: var(--transition);
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+.btn-sm {
+    padding: 10px 24px;
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
+}
+
+/* Mobile Nav Hide */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        /* Simple hide for mobile for now to keep it clean */
+    }
 }
 
 /* Hero Section */
@@ -202,16 +258,19 @@ p {
     background-color: var(--bg-color);
 }
 
-display: grid;
-grid-template-columns: 0.8fr 1.2fr;
-/* Ratio: Image smaller, Text wider */
-gap: 60px;
-align-items: center;
+/* About Content Grid */
+.about-content {
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    gap: 60px;
+    align-items: center;
 }
 
 /* Responsive Grid */
 @media (max-width: 992px) {
-    .grid-2 {
+
+    .grid-2,
+    .about-content {
         grid-template-columns: 1fr;
         gap: 40px;
     }
@@ -428,22 +487,7 @@ align-items: center;
 }
 
 
-width: 80px;
-height: 80px;
-background-color: var(--white);
-border: 2px solid var(--accent-color);
-color: var(--primary-color);
-font-family: var(--font-heading);
-font-size: 2rem;
-display: flex;
-align-items: center;
-justify-content: center;
-border-radius: 50%;
-margin-bottom: 25px;
-position: relative;
-z-index: 2;
-transition: var(--transition);
-}
+
 
 .step:hover .step-process {
     background-color: var(--accent-color);
