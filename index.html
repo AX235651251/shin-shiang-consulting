@@ -21,6 +21,13 @@
             <a href="#" class="logo-link">
                 <img src="assets/images/logo_1.png" alt="信翔專業顧問 Logo" class="nav-logo">
             </a>
+
+            <button class="mobile-menu-toggle" aria-label="Toggle navigation">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+
             <div class="nav-menu">
                 <ul class="nav-links">
                     <li><a href="#about">關於信翔專業顧問有限公司</a></li>
@@ -286,6 +293,20 @@
         </div>
     </footer>
 
+    <script>
+        document.querySelector('.mobile-menu-toggle').addEventListener('click', function () {
+            document.querySelector('.nav-menu').classList.toggle('active');
+            this.classList.toggle('active');
+        });
+
+        // Close menu when a link is clicked
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.querySelector('.nav-menu').classList.remove('active');
+                document.querySelector('.mobile-menu-toggle').classList.remove('active');
+            });
+        });
+    </script>
 </body>
 
 </html>
