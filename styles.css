@@ -735,7 +735,8 @@ p {
         background-image: linear-gradient(to bottom,
                 rgba(15, 44, 62, 0.4) 0%,
                 rgba(15, 44, 62, 0.8) 100%),
-            url('assets/images/banner_1.png');
+            url('assets/images/banner_mobile.png');
+        /* Use dedicated mobile image */
     }
 
     .hero h1 {
