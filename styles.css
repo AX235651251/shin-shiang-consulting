@@ -726,8 +726,18 @@ p {
     /* Adjust specific text/layout for mobile */
     .hero {
         text-align: center;
-        background-position: 80% center;
-        /* Shift image to show right side */
+        background-position: 75% center;
+        /* Slightly more center-right */
+        /* Switch to vertical gradient for mobile - darker overall for text pop */
+        background-image: linear-gradient(to bottom,
+                rgba(15, 44, 62, 0.4) 0%,
+                rgba(15, 44, 62, 0.8) 100%),
+            url('assets/images/banner_1.png');
+    }
+
+    .hero h1 {
+        text-shadow: 0 4px 30px rgba(0, 0, 0, 0.6);
+        /* Stronger shadow on mobile */
     }
 
     .hero .container {
