@@ -37,6 +37,12 @@ body {
     font-weight: 400;
 }
 
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
+    /* Offset for fixed navbar */
+}
+
 img {
     max-width: 100%;
     height: auto;
