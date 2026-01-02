@@ -326,7 +326,8 @@ align-items: center;
 .why-us-highlight h3 {
     color: var(--accent-color);
     font-size: 2rem;
-    margin-top: 20px;
+    margin-top: 50px;
+    /* Increased from 20px */
     display: flex;
     align-items: center;
     gap: 15px;
