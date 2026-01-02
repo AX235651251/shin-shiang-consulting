@@ -450,7 +450,8 @@ p {
 
 /* Process Section */
 .process {
-    background-color: var(--white);
+    background-color: var(--bg-alt);
+    /* Match Services section beige */
     text-align: center;
 }
 
