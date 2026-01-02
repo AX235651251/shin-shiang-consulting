@@ -60,12 +60,12 @@
     <!-- About Section -->
     <section id="about" class="section about">
         <div class="container">
-            <h2 class="section-title">關於信翔專業顧問有限公司</h2>
+            <h2 class="section-title fade-in-up">關於信翔專業顧問有限公司</h2>
             <div class="about-content layout-stack">
-                <div class="about-image">
+                <div class="about-image fade-in-up delay-1">
                     <img src="assets/images/banner_2.png" alt="About Us Banner" class="rounded-img shadow-img">
                 </div>
-                <div class="about-text">
+                <div class="about-text fade-in-up delay-2">
                     <p>
                         <strong>信翔專業顧問有限公司</strong> 為合法立案的人力資源與獵頭顧問公司，<br>
                         長期協助企業招募合適人才，同時也為求職者提供更有效率、更安心的媒合方式。
@@ -81,9 +81,9 @@
     <!-- Services Section -->
     <section id="services" class="section services">
         <div class="container">
-            <h2 class="section-title">我們協助媒合的工作類型</h2>
+            <h2 class="section-title fade-in-up">我們協助媒合的工作類型</h2>
             <div class="grid-3">
-                <div class="card service-card">
+                <div class="card service-card fade-in-up delay-1">
                     <div class="icon">
                         <svg class="icon-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
                             stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
@@ -110,7 +110,7 @@
                             </svg> 提供教學與流程說明</span>
                     </div>
                 </div>
-                <div class="card service-card">
+                <div class="card service-card fade-in-up delay-2">
                     <div class="icon">
                         <svg class="icon-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
                             stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
@@ -132,7 +132,7 @@
                             </svg> 不需高度銷售或推銷經驗</span>
                     </div>
                 </div>
-                <div class="card service-card">
+                <div class="card service-card fade-in-up delay-3">
                     <div class="icon">
                         <svg class="icon-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
                             stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
@@ -160,10 +160,10 @@
     <!-- Why Choose Us -->
     <section id="why-us" class="section why-us">
         <div class="container">
-            <h2 class="section-title">為什麼選擇信翔？</h2>
+            <h2 class="section-title fade-in-up">為什麼選擇信翔？</h2>
             <div class="layout-grid-balanced">
                 <div class="feature-list">
-                    <div class="feature-item">
+                    <div class="feature-item fade-in-up delay-1">
                         <span class="check"><svg class="icon-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
                                 fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
                                 <polyline points="20 6 9 17 4 12"></polyline>
@@ -192,7 +192,7 @@
                         <p>重視長期配合與穩定性</p>
                     </div>
                 </div>
-                <div class="why-us-highlight">
+                <div class="why-us-highlight fade-in-up delay-4">
                     <p>我們更在意的是：</p>
                     <h3>
                         <svg class="icon-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
@@ -210,9 +210,9 @@
     <!-- Process Section -->
     <section id="process" class="section process">
         <div class="container">
-            <h2 class="section-title">媒合流程說明</h2>
-            <p class="section-subtitle">簡單 3 步驟，降低不安感</p>
-            <div class="steps-container">
+            <h2 class="section-title fade-in-up">媒合流程說明</h2>
+            <p class="section-subtitle fade-in-up delay-1">簡單 3 步驟，降低不安感</p>
+            <div class="steps-container fade-in-up delay-2">
                 <div class="step">
                     <div class="step-process">1</div>
                     <p>填寫基本資料</p>
@@ -257,9 +257,9 @@
     <!-- CTA Section -->
     <section class="section cta">
         <div class="container">
-            <h2>不確定自己適合哪一類工作？</h2>
-            <p>交給專業顧問，協助你一起評估。</p>
-            <a href="https://lin.ee/wW9JqcI" class="btn btn-primary btn-large" target="_blank">
+            <h2 class="fade-in-up">不確定自己適合哪一類工作？</h2>
+            <p class="fade-in-up delay-1">交給專業顧問，協助你一起評估。</p>
+            <a href="https://lin.ee/wW9JqcI" class="btn btn-primary btn-large fade-in-up delay-2" target="_blank">
                 <svg class="icon-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
                     stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
                     <line x1="5" y1="12" x2="19" y2="12"></line>
@@ -305,6 +305,26 @@
                 document.querySelector('.nav-menu').classList.remove('active');
                 document.querySelector('.mobile-menu-toggle').classList.remove('active');
             });
+        });
+
+        // Scroll Animation Observer
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target); // Only animate once
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in-up').forEach(el => {
+            observer.observe(el);
         });
     </script>
 </body>
